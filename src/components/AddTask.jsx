@@ -49,7 +49,7 @@ export const AddTask = ({ onAdd }) => {
           onChange={(e) => setReminder(e.currentTarget.checked)}
         />
       </div>
-      <input type="submit" value="Save Task" className="btn btn-block" />
+      <input type="submit" value="Save Friend" className="btn btn-block" />
     </form>
   );
 };
