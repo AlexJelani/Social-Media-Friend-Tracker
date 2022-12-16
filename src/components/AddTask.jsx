@@ -23,7 +23,7 @@ export const AddTask = ({ onAdd }) => {
   return (
     <form className="add-form" onSubmit={onSubmit}>
       <div className="form-control">
-        <label>Task</label>
+        <label>What app did you meet each other on?</label>
         <input
           type="text"
           placeholder="Add Task"
@@ -41,7 +41,7 @@ export const AddTask = ({ onAdd }) => {
         />
       </div>
       <div className="form-control form-control-check">
-        <label>Set Reminder</label>
+        <label>Will contact later?</label>
         <input
           type="checkbox"
           checked={reminder}

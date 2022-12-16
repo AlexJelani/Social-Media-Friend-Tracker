@@ -15,7 +15,7 @@ const Header = ({ title, onAdd, showAdd }) => {
   );
 };
 Header.defaultProps = {
-  title: "Task Tracker",
+  title: "Social Friend Tracker",
 };
 Header.propTypes = {
   title: PropTypes.string.isRequired,
