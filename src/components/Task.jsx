@@ -9,6 +9,7 @@ const Task = ({ task, onDelete, onToggle }) => {
           onClick={onDelete}
         />
       </h3>
+      <p>{task.name}</p>
       <p>{task.day}</p>
     </div>
   );

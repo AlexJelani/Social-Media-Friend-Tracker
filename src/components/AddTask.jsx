@@ -3,6 +3,7 @@ import { useState } from "react";
 
 export const AddTask = ({ onAdd }) => {
   const [text, setText] = useState("");
+  const [name, setName] = useState("");
   const [day, setDay] = useState("");
   const [reminder, setReminder] = useState();
 
@@ -13,9 +14,10 @@ export const AddTask = ({ onAdd }) => {
       alert("Please add task");
       return;
     }
-    onAdd({ text, day, reminder });
+    onAdd({ text, name, day, reminder });
 
     setText("");
+    setName("");
     setDay("");
     setReminder(false);
   };
@@ -26,9 +28,18 @@ export const AddTask = ({ onAdd }) => {
         <label>What app did you meet each other on?</label>
         <input
           type="text"
-          placeholder="Add Task"
+          placeholder="Add App"
           value={text}
           onChange={(e) => setText(e.target.value)}
+        />
+      </div>
+      <div className="form-control">
+        <label>Type their name here.</label>
+        <input
+          type="text"
+          placeholder="Add Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
         />
       </div>
       <div className="form-control">
@@ -41,7 +52,7 @@ export const AddTask = ({ onAdd }) => {
         />
       </div>
       <div className="form-control form-control-check">
-        <label>Will contact later?</label>
+        <label>Contact later?</label>
         <input
           type="checkbox"
           checked={reminder}
