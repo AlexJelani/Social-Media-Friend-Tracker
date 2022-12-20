@@ -52,7 +52,7 @@ export const AddTask = ({ onAdd }) => {
         />
       </div>
       <div className="form-control form-control-check">
-        <label>Contact later?</label>
+        <label>Friendable?</label>
         <input
           type="checkbox"
           checked={reminder}
