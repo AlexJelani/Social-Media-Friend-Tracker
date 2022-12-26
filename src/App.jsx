@@ -1,4 +1,5 @@
 import "./App.css";
+import { Modal } from "./components/Modal";
 import { ReactDOM } from "react-dom/client";
 import Header from "./components/Header";
 import Button from "./components/Button";
@@ -110,6 +111,7 @@ function App() {
         </Routes>
         <Footer />
       </div>
+      <Modal/>
     </Router>
   );
 }
