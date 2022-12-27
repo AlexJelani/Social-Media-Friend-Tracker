@@ -9,7 +9,7 @@ import { MdMouse } from "react-icons/md";
 const Modal = ({ setIsOpen }) => {
   return (
     <>
-      <div className={styles.darkBG} onClick={() => setIsOpen(false)} />
+      <div className={styles.darkBG}  />
       <div className={styles.centered}>
         <div className={styles.modal}>
           <div className={styles.modalHeader}>
