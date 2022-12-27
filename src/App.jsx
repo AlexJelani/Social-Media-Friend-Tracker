@@ -1,4 +1,6 @@
 import "./App.css";
+import styles from "./App.module.css";
+import Modal from "./components/Modal";
 import { ReactDOM } from "react-dom/client";
 import Header from "./components/Header";
 import Button from "./components/Button";
@@ -12,6 +14,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function App() {
   const [showAddTask, setShowAddTask] = useState(false);
   const [tasks, setTasks] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
   //useEffect
   useEffect(() => {
     const getTasks = async () => {
@@ -96,6 +99,12 @@ function App() {
   };
   return (
     <Router>
+      <main>
+        <button className={styles.primaryBtn} onClick={() => setIsOpen(true)}>
+          Open Modal
+        </button>
+        {isOpen && <Modal setIsOpen={setIsOpen} />}
+      </main>
       <div className="container">
         <Header
           onAdd={() => setShowAddTask(!showAddTask)}
