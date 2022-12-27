@@ -3,6 +3,8 @@
 import React from "react";
 import styles from "./Modal.module.css";
 import { RiCloseLine } from "react-icons/ri";
+import { BiHappyBeaming } from "react-icons/bi";
+
 
 const Modal = ({ setIsOpen }) => {
   return (
@@ -17,21 +19,23 @@ const Modal = ({ setIsOpen }) => {
             <RiCloseLine style={{ marginBottom: "-3px" }} />
           </button>
           <div className={styles.modalContent}>
-            Are you sure you want to delete the item?
+            Welcome to my Social Friend Tracker App.<br></br>
+            The Green tab <BiHappyBeaming style={{color:"green"}}/> means that you want to contact 
+            your new friend 
           </div>
           <div className={styles.modalActions}>
             <div className={styles.actionsContainer}>
-              <button
+              {/* <button
                 className={styles.deleteBtn}
                 onClick={() => setIsOpen(false)}
               >
                 Delete
-              </button>
+              </button> */}
               <button
-                className={styles.cancelBtn}
+                className={styles.deleteBtn}
                 onClick={() => setIsOpen(false)}
               >
-                Cancel
+                Close
               </button>
             </div>
           </div>
