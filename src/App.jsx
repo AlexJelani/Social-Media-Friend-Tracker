@@ -1,5 +1,4 @@
 import "./App.css";
-import SimpleModal from "./components/SimpleModal";
 import { ReactDOM } from "react-dom/client";
 import Header from "./components/Header";
 import Button from "./components/Button";
@@ -97,7 +96,6 @@ function App() {
   };
   return (
     <Router>
-      <SimpleModal />
       <div className="container">
         <Header
           onAdd={() => setShowAddTask(!showAddTask)}
