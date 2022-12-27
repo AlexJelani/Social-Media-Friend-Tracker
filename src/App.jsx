@@ -14,7 +14,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function App() {
   const [showAddTask, setShowAddTask] = useState(false);
   const [tasks, setTasks] = useState([]);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   //useEffect
   useEffect(() => {
     const getTasks = async () => {
@@ -100,9 +100,9 @@ function App() {
   return (
     <Router>
       <main>
-        <button className={styles.primaryBtn} onClick={() => setIsOpen(true)}>
+        {/* <button className={styles.primaryBtn} onClick={() => setIsOpen(true)}>
           Open Modal
-        </button>
+        </button> */}
         {isOpen && <Modal setIsOpen={setIsOpen} />}
       </main>
       <div className="container">
