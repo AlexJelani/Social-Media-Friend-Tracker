@@ -4,6 +4,7 @@ import { useState } from "react";
 export const AddTask = ({ onAdd }) => {
   const [text, setText] = useState("");
   const [name, setName] = useState("");
+  const [note, setNote] = useState("");
   const [day, setDay] = useState("");
   const [reminder, setReminder] = useState();
 
@@ -14,10 +15,11 @@ export const AddTask = ({ onAdd }) => {
       alert("Please add task");
       return;
     }
-    onAdd({ text, name, day, reminder });
+    onAdd({ text, name, note, day, reminder });
 
     setText("");
     setName("");
+    setNote("");
     setDay("");
     setReminder(false);
   };
@@ -40,6 +42,15 @@ export const AddTask = ({ onAdd }) => {
           placeholder="Add Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
+        />
+      </div>
+      <div className="form-control">
+        <label>Write your notes here.</label>
+        <input
+          type="text"
+          placeholder="Add Note"
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
         />
       </div>
       <div className="form-control">

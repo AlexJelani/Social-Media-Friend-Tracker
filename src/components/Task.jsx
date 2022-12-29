@@ -10,6 +10,7 @@ const Task = ({ task, onDelete, onToggle }) => {
         />
       </h3>
       <p>{task.name}</p>
+      <p>{task.note}</p>
       <p>{task.day}</p>
     </div>
   );
