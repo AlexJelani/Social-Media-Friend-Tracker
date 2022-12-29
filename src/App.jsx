@@ -1,4 +1,6 @@
 import "./App.css";
+import styles from "./App.module.css";
+import Modal from "./components/Modal";
 import { ReactDOM } from "react-dom/client";
 import Header from "./components/Header";
 import Button from "./components/Button";
@@ -12,6 +14,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function App() {
   const [showAddTask, setShowAddTask] = useState(false);
   const [tasks, setTasks] = useState([]);
+  const [isOpen, setIsOpen] = useState(true);
   //useEffect
   useEffect(() => {
     const getTasks = async () => {
@@ -23,26 +26,33 @@ function App() {
 
   //Fetch tasks
   const fetchTasks = async () => {
-    const res = await fetch("https://social-friends-api-production.up.railway.app/tasks");
+    const res = await fetch(
+      "https://social-friends-api-production.up.railway.app/tasks"
+    );
     const data = await res.json();
     return data;
   };
   //Fetch tasks
   const fetchTask = async (id) => {
-    const res = await fetch(`https://social-friends-api-production.up.railway.app/tasks/${id}`);
+    const res = await fetch(
+      `https://social-friends-api-production.up.railway.app/tasks/${id}`
+    );
     const data = await res.json();
     return data;
   };
 
   // Add Task
   const addTask = async (task) => {
-    const res = await fetch("https://social-friends-api-production.up.railway.app/tasks", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(task),
-    });
+    const res = await fetch(
+      "https://social-friends-api-production.up.railway.app/tasks",
+      {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(task),
+      }
+    );
 
     const data = await res.json();
 
@@ -55,9 +65,12 @@ function App() {
 
   //Delete Task
   const deleteTask = async (id) => {
-    await fetch(`https://social-friends-api-production.up.railway.app/tasks/${id}`, {
-      method: "DELETE",
-    });
+    await fetch(
+      `https://social-friends-api-production.up.railway.app/tasks/${id}`,
+      {
+        method: "DELETE",
+      }
+    );
     setTasks(tasks.filter((task) => task.id !== id));
   };
   // Toggle Reminder
@@ -65,13 +78,16 @@ function App() {
     const taskToToggle = await fetchTask(id);
     const updTask = { ...taskToToggle, reminder: !taskToToggle.reminder };
 
-    const res = await fetch(`https://social-friends-api-production.up.railway.app/tasks/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(updTask),
-    });
+    const res = await fetch(
+      `https://social-friends-api-production.up.railway.app/tasks/${id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(updTask),
+      }
+    );
 
     const data = await res.json();
 
@@ -83,6 +99,12 @@ function App() {
   };
   return (
     <Router>
+      <main>
+        {/* <button className={styles.primaryBtn} onClick={() => setIsOpen(true)}>
+          Open Modal
+        </button> */}
+        {isOpen && <Modal setIsOpen={setIsOpen} />}
+      </main>
       <div className="container">
         <Header
           onAdd={() => setShowAddTask(!showAddTask)}
