@@ -11,12 +11,14 @@
       "id": 3,
       "text": "Twitter",
       "name": "Jelani",
+      "note": "Met at a bar",
       "day": "Feb 5th at 2:30pm",
       "reminder": true
     },
     {
       "text": "TikTok",
       "name": "Jelani",
+      "note": "Met at a bar",
       "day": "Monday at 4pm",
       "reminder": true,
       "id": 4
@@ -24,12 +26,14 @@
     {
       "text": "Twitter",
       "name": "John",
+      "note": "Met at a bar",
       "day": "Wednesday at 5pm",
       "id": 5
     },
     {
       "text": "Insta",
       "name": "Joe",
+      "note": "Met at a bar",
       "day": "Monday at 5pm",
       "id": 6
     }
