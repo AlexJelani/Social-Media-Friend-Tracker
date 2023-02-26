@@ -27,7 +27,7 @@ function App() {
   //Fetch tasks
   const fetchTasks = async () => {
     const res = await fetch(
-      "https://social-friends-api-production.up.railway.app/tasks"
+      "https://us-central1-fir-social-media-api.cloudfunctions.net/app/tasks"
     );
     const data = await res.json();
     return data;
@@ -35,7 +35,7 @@ function App() {
   //Fetch tasks
   const fetchTask = async (id) => {
     const res = await fetch(
-      `https://social-friends-api-production.up.railway.app/tasks/${id}`
+      `https://us-central1-fir-social-media-api.cloudfunctions.net/app/tasks/${id}`
     );
     const data = await res.json();
     return data;
@@ -44,7 +44,7 @@ function App() {
   // Add Task
   const addTask = async (task) => {
     const res = await fetch(
-      "https://social-friends-api-production.up.railway.app/tasks",
+      "https://us-central1-fir-social-media-api.cloudfunctions.net/app/tasks",
       {
         method: "POST",
         headers: {
@@ -66,7 +66,7 @@ function App() {
   //Delete Task
   const deleteTask = async (id) => {
     await fetch(
-      `https://social-friends-api-production.up.railway.app/tasks/${id}`,
+      `https://us-central1-fir-social-media-api.cloudfunctions.net/app/tasks/${id}`,
       {
         method: "DELETE",
       }
@@ -79,7 +79,7 @@ function App() {
     const updTask = { ...taskToToggle, reminder: !taskToToggle.reminder };
 
     const res = await fetch(
-      `https://social-friends-api-production.up.railway.app/tasks/${id}`,
+      `https://us-central1-fir-social-media-api.cloudfunctions.net/app/tasks/${id}`,
       {
         method: "PUT",
         headers: {
