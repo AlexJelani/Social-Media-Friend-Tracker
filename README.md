@@ -18,7 +18,7 @@ The app integrates with multiple social media platforms, using a custom RESTFUL 
 
 #### Example:   
 
-[ PRETEND SCREEN SHOT IS HERE ]
+![](images/FriendTracker.png)
 
 [ PRETEND OTHER SCREEN SHOT IS HERE ]
 
