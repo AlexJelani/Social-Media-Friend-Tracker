@@ -20,7 +20,6 @@ The app integrates with multiple social media platforms, using a custom RESTFUL 
 
 ![](images/FriendTracker.PNG)
 
-[ PRETEND OTHER SCREEN SHOT IS HERE ]
 
 ## Installation and Setup Instructions
 
@@ -46,11 +45,7 @@ To Visit App:
 
 ## Project to-dos
 
-  - What was the context for this project? (ie: was this a side project? was this for Turing? was this for an experiment?)
-  - What did you set out to build?
-  - Why was this project challenging and therefore a really good learning experience?
-  - What were some unexpected obstacles?
-  - What tools did you use to implement this project?
+  - Deploy it to mobile using React Native
   
  ## Documentation
  <a href="https://www.youtube.com/watch?v=FLnxgSZ0DG4&ab_channel=CodewithAniaKub%C3%B3w">Make your own mock API (super simple)</a>
